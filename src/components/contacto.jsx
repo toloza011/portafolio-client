@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { useState } from 'react';
-
+import emailjs from 'emailjs-com';
 
 const Contacto = () =>{
 
@@ -48,8 +48,25 @@ const Contacto = () =>{
             mensaje: mensaje
         }
         console.log(data);
+        emailjs.send('default_service','template_v510gau',data,'user_lsZWJ6AgA7RFLlXRmtgAD')
+        .then((response)=>{
+            //console.log(response.data.mensaje);
+            setalerta("Mensaje enviado exitosamente!")
+            limpiarCampos();
+            setTimeout(()=>{
+                setalerta("")
+            },4000)
+        })
+        .catch((error)=>{
+            console.log(error)
+            setalerta("Error al enviar el mensaje, intentelo de nuevo mas tarde.")
+            limpiarCampos();
+            setTimeout(()=>{
+                setalerta("")
+            },4000)
+        })
 
-        axios.post('/api/enviarEmail',data)
+        /* axios.post('/api/enviarEmail',data)
         .then((response)=>{
             console.log(response.data.mensaje);
             setalerta(response.data.mensaje)
@@ -67,6 +84,7 @@ const Contacto = () =>{
                 setalerta("")
             },4000)
         })
+        */
        
     }
 
