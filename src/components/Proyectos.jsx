@@ -12,7 +12,8 @@ const Proyecto = () => {
       nombre: "Portafolio",
       descripcion: "Sitio web para regalar articulos que lo necesiten para algun proyecto.",
       img: portafolio,
-      lenguaje: "reactjs"
+      lenguaje: "reactjs",
+      github: ""
     },
     {
       nombre: "Tolowebs",
