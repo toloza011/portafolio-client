@@ -3,6 +3,8 @@ import React,{useState,useEffect} from "react";
 import portafolio from "../assets/img/Portafoliov2.png";
 import tolowebs from "../assets/img/Tolowebs.png"
 import teloregalo from "../assets/img/teloregalo.png"
+import cmsTienda from "../assets/img/CMSTIENDA.png"
+import DinamiteStore from "../assets/img/dinamitastore.png"
 import notFound from "../assets/img/img-404.png";
 import {Link} from "react-router-dom"
 
@@ -12,20 +14,30 @@ const Proyecto = () => {
       nombre: "Portafolio",
       descripcion: "Sitio web para regalar articulos que lo necesiten para algun proyecto.",
       img: portafolio,
-      lenguaje: "reactjs",
-      github: ""
+      lenguaje: "ReactJs",
+      github: "https://github.com/toloza011/portafolio-client",
+      web: "http://tolowebs.herokuapp.com/"
     },
     {
       nombre: "Tolowebs",
       descripcion: "Mi sitio web para ofrecer mis servicios de desarrollador web.",
       img: tolowebs,
-      lenguaje: "laravel"
+      lenguaje: "laravel",
+      github: "https://github.com/toloza011/tolowebs"
     },
     {
       nombre: "Mi tienda",
-      descripcion: "Tienda online ",
-      img: teloregalo,
-      lenguaje: "laravel"
+      descripcion: "Administrador CMS para tiendas Online",
+      img: cmsTienda,
+      lenguaje: "laravel",
+      github: "https://github.com/toloza011/CmsTienda"
+    },
+    {
+      nombre : "Dinamita Store",
+      descripcion: "Tienda Online de codigos de videojuegos digitales",
+      img: DinamiteStore,
+      lenguaje: "laravel",
+      github: "https://github.com/toloza011/Dinamita-Store"
     }
     
   ];
@@ -66,8 +78,13 @@ const Proyecto = () => {
       console.log(filtrados);
       setproyectos(filtrados);
     }else{
-      console.log(proyectos);
-      setproyectos(proyectos);
+      if(lenguaje == "todos"){
+        setproyectos(proyectos);
+      }else{
+        console.log(proyectos);
+        setproyectos([]);
+      }
+      
     }
  }
 
@@ -104,6 +121,7 @@ const Proyecto = () => {
          <button type="button" className="active" onClick={(e) => filtrarCategoria("todos")} >Todos</button>
          <button type="button" className="active" onClick={(e) => filtrarCategoria("laravel")} >Laravel</button>
          <button type="button" className="active" onClick={(e) => filtrarCategoria("reactjs")}>ReactJs</button>
+         <button type="button" className="active" onClick={(e) => filtrarCategoria("NodeJs")}>NodeJs</button>
        </div>
 
       <div className="list-proyectos">
@@ -119,12 +137,16 @@ const Proyecto = () => {
                 <div className="contenido">
                   <h3>{proyecto.nombre}</h3>
                   <p>{proyecto.descripcion}</p>
-                  <a href="" >
+                  {
+                    proyecto.web != null ? 
+                   <a href="" >
                   <i className="far fa-eye">
                   </i>
                   Visitar Sitio
-                  </a>
-                  <a href="" >
+                  </a> 
+                  : ''
+                  }
+                  <a href={proyecto.github} target="__blank">
                   <i className="fab fa-github"></i>
                   Repositorio
                   </a>
