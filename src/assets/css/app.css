@@ -129,6 +129,7 @@ body {
     display: flex;
     height: 100%;
     justify-content: end;
+   
     
 }
 .portada_img img{
@@ -649,11 +650,19 @@ body {
     font-size: 20px;
     width: 100%;
   }
+  .portada_img{
+    width: 100%;
+    flex-wrap: wrap; 
+  }
+  .contact-form form{
+    display: block;
+  }
 }
 @media(max-width: 1200px){
   .list-proyectos{
-    margin-top: 300px;
+   
     padding-bottom: 250px;
+    padding-top: 0;
   }
   .app__main_center{
    height: 100%;
@@ -667,9 +676,7 @@ body {
     max-height: 100%;
    }
    .list-proyectos{
-   
-    padding-top:1200px ;
-    
+    padding-top:500px ;
   }
   .container-proyectos{
     background: linear-gradient(to right, #2c3e50, #2980b9)
