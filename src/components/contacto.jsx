@@ -48,23 +48,33 @@ const Contacto = () =>{
             mensaje: mensaje
         }
         console.log(data);
-        emailjs.send('default_service','template_v510gau',data,'user_lsZWJ6AgA7RFLlXRmtgAD')
-        .then((response)=>{
-            //console.log(response.data.mensaje);
-            setalerta("Mensaje enviado exitosamente!")
-            limpiarCampos();
+        if(data.nombre != '' && data.email != '' && data.telefono != '' && data.asunto != '' && data.mensaje != ''){
+            emailjs.send('default_service','template_v510gau',data,'user_lsZWJ6AgA7RFLlXRmtgAD')
+            .then((response)=>{
+                //console.log(response.data.mensaje);
+                console.log(response);
+                setalerta("Mensaje enviado exitosamente!")
+                limpiarCampos();
+                setTimeout(()=>{
+                    setalerta("")
+                },4000)
+            })
+            .catch((error)=>{
+                console.log(error)
+                setalerta("Error al enviar el mensaje, intentelo de nuevo mas tarde.")
+                limpiarCampos();
+                setTimeout(()=>{
+                    setalerta("")
+                },4000)
+            })
+        }else{
+            setalerta("Los campos no pueden estar vacios!");
+            
             setTimeout(()=>{
                 setalerta("")
             },4000)
-        })
-        .catch((error)=>{
-            console.log(error)
-            setalerta("Error al enviar el mensaje, intentelo de nuevo mas tarde.")
-            limpiarCampos();
-            setTimeout(()=>{
-                setalerta("")
-            },4000)
-        })
+        }
+       
 
         /* axios.post('/api/enviarEmail',data)
         .then((response)=>{

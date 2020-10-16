@@ -12,7 +12,7 @@ const Proyecto = () => {
   const proyectos = [
     {
       nombre: "Portafolio",
-      descripcion: "Sitio web para regalar articulos que lo necesiten para algun proyecto.",
+      descripcion: "Mi portafolio de presentacion con mis proyectos mas destacados y datos de contacto.",
       img: portafolio,
       lenguaje: "ReactJs",
       github: "https://github.com/toloza011/portafolio-client",
@@ -34,7 +34,7 @@ const Proyecto = () => {
     },
     {
       nombre : "Dinamita Store",
-      descripcion: "Tienda Online de codigos de videojuegos digitales",
+      descripcion: "Tienda Online de codigos de videojuegos digitales con carrito y metodo de pago",
       img: DinamiteStore,
       lenguaje: "laravel",
       github: "https://github.com/toloza011/Dinamita-Store"
