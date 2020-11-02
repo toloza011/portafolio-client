@@ -6,6 +6,8 @@ import teloregalo from "../assets/img/teloregalo.png"
 import cmsTienda from "../assets/img/CMSTIENDA.png"
 import DinamiteStore from "../assets/img/dinamitastore.png"
 import notFound from "../assets/img/img-404.png";
+import pokeapi from "../assets/img/pokeapi.png";
+import gifapp from "../assets/img/gifapp.png";
 import {Link} from "react-router-dom"
 
 const Proyecto = () => {
@@ -38,6 +40,21 @@ const Proyecto = () => {
       img: DinamiteStore,
       lenguaje: "laravel",
       github: "https://github.com/toloza011/Dinamita-Store"
+    },
+    {
+      nombre : "Pokedex",
+      descripcion: "Buscador con recomendacion en tiempo real de todos los pokemones!",
+      img: pokeapi,
+      lenguaje: "laravel",
+      github: "https://github.com/toloza011/Pokedex"
+    },
+    {
+      nombre: "GifApp",
+      descripcion: "Buscador de gifs con la API de GIPHY!",
+      img: gifapp,
+      lenguaje: "ReactJs",
+      github: "https://github.com/toloza011/gifApp",
+      web: "https://toloza011.github.io/gifApp/"
     }
     
   ];
@@ -138,8 +155,8 @@ const Proyecto = () => {
                   <h3>{proyecto.nombre}</h3>
                   <p>{proyecto.descripcion}</p>
                   {
-                    proyecto.web != null ? 
-                   <a href="" >
+                    proyecto.web ? 
+                   <a target="__blank" href={proyecto.web} >
                   <i className="far fa-eye">
                   </i>
                   Visitar Sitio
