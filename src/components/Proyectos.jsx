@@ -46,6 +46,7 @@ const Proyecto = () => {
       descripcion: "Buscador con recomendacion en tiempo real de todos los pokemones!",
       img: pokeapi,
       lenguaje: "laravel",
+      web: "http://pokedexetm.herokuapp.com/",
       github: "https://github.com/toloza011/Pokedex"
     },
     {
