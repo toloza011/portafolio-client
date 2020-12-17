@@ -25,7 +25,8 @@ const Proyecto = () => {
       descripcion: "Mi sitio web para ofrecer mis servicios de desarrollador web.",
       img: tolowebs,
       lenguaje: "laravel",
-      github: "https://github.com/toloza011/tolowebs"
+      github: "https://github.com/toloza011/tolowebs",
+      web: "http://18.223.213.188/"
     },
     {
       nombre: "Mi tienda",
